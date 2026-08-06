@@ -1,0 +1,136 @@
+:root {
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --gray-500: hsl(0, 0%, 42%);
+    --gray-950: hsl(0, 0%, 7%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontally center */
+    align-items: center;    /* Vertically center */
+    margin: 0;
+    background-color: var(--yellow);
+    font-family: 'Figtree', sans-serif;
+}
+
+.card-container {
+    width: 450px;
+    height: auto;
+    min-height: 600px;
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: 10px 10px var(--gray-950);
+    padding: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.learning {
+   
+    font-weight: 800;
+    padding: 5px 10px;
+    background-color: var(--yellow);
+    width: fit-content;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.learning:hover {
+    background-color: var(--gray-950);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.published {
+    font-size: 0.9rem;
+    color: var(--gray-950);
+    font-weight: 500;
+    margin-bottom: 20px;        
+}
+
+.heartbeat {
+    animation: heartbeat 1.5s 2;
+}
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+.card-title {
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: var(--gray-500);
+    margin-bottom: 20px;
+    width: 90%;
+    line-height: 1.5;
+}
+
+.card-author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.card-author {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        width: 80%;
+        height: auto;
+        min-height:570px;
+        padding-bottom: 0;
+    }
+
+    .card-author {
+        bottom: 7%;
+    }
+}
